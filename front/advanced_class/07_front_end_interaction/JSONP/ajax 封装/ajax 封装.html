@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body></body>
+  <script>
+    function ajax(options) {
+      let opts = Object.assign(
+        {
+          method: 'get',
+          url: '',
+          headers: {
+            'content-type': 'application/x-www-form-urlencoded',
+          },
+          jsonp: 'cb',
+          data: '',
+          success: function () {},
+        },
+        options
+      );
+
+      let xhr = new XMLHttpRequest();
+      if (options.method == 'get') {
+        let data = o2u(opts.data);
+        options.url = options.url + '?' + data;
+      }
+      xhr.open(options.method, options.url, true);
+      for (let key in opts.headers) {
+        xhr.setRequestHeader(key, opts.headers[key]);
+      }
+      let sendData;
+      switch (opts.headers['content-type']) {
+        case 'application/x-www-form-urlencoded':
+          sendData = o2u(opts.data);
+          break;
+        case 'application/json':
+          sendData = JSON.stringify(opts.data);
+          break;
+      }
+      xhr.onload = function () {
+        let resData;
+        if (xhr.getResponseHeader('content-type').includes('xml')) {
+          resData = xhr.responseXML;
+        } else {
+          resData = JSON.parse(xhr.responseText);
+        }
+        options.success(resData);
+      };
+      if (options.method == 'get') {
+        xhr.send();
+      } else {
+        xhr.send(sendData);
+      }
+    }
+
+    // 把对象传换成 queryString，就是 get 请求后面的 ? &
+    function o2u(obj) {
+      let keys = Object.keys(obj);
+      let values = Object.values(obj);
+      return keys
+        .map((v, k) => {
+          return `${v}=${values[k]}`;
+        })
+        .join('&');
+    }
+  </script>
+</html>

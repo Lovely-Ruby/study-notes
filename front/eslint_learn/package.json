@@ -1,0 +1,25 @@
+{
+  "name": "eslint_learn",
+  "version": "1.0.0",
+  "description": "这个字段会去取项目文件下的 readme 文件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.3.2"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}

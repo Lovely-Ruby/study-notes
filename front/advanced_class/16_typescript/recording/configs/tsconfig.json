@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "../dist",
+    "target": "ES3",
+    "watch": true
+  },
+
+  "include": ["../src/**/*.ts"]
+  // 两个星号代表当前目录以及其下子目录
+  // 相当于递归
+  // 一个星号代表所有文件
+  // .ts 代表寻找什么文件
+}

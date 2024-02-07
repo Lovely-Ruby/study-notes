@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/login.css" />
+    <script src="./axios.js" type="text/javascript"></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="loginContainer">
+      <h1>登录</h1>
+      <form action="/checkUs er" method="post" onsubmit="return false;">
+        姓名：
+        <input
+          class="inputStyle"
+          id="username"
+          type="text"
+          name="username"
+        /><br />密码：
+        <input class="inputStyle" id="pwd" type="password" name="pwd" /><br />
+        <input
+          class="loginStyle"
+          id="submitButtom"
+          type="submit"
+          value="登录"
+        />
+      </form>
+      <button onclick="checkApi()">点击我获取需要鉴权的接口</button>
+    </div>
+  </body>
+  <script>
+    /**
+     * 拦截器，所有的 axios 请求都会走这里
+     **/
+
+    //  请求拦截器
+    axios.interceptors.request.use((config) => {
+      console.log('请求拦截器:>>', config);
+      if (localStorage.getItem('token')) {
+        // 在拦截器里去配置 token
+        config.headers.Authorization =
+          'Bearer ' + localStorage.getItem('token');
+      }
+      return config;
+    });
+    // 响应拦截器
+    axios.interceptors.response.use((res) => {
+      // console.log(config)
+      console.log('响应拦截器:>>', res);
+      return res;
+    });
+
+    document.querySelector('#submitButtom').onclick = function () {
+      axios({
+        method: 'post',
+        url: 'http://localhost:4000/checkUser',
+        data: {
+          username: '张三',
+          password: '123',
+        },
+        headers: {},
+      }).then((res) => {
+        console.log(res);
+        if (res.data.token) {
+          localStorage.setItem('token', res.data.token);
+        }
+      });
+    };
+
+    function checkApi() {
+      let data = {};
+      axios
+        .post('http://localhost:4000/checkApi')
+        .then((res) => console.log(res));
+    }
+  </script>
+</html>

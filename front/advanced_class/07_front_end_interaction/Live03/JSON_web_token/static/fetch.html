@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fetch</title>
+  </head>
+  <body>
+    <button>点我</button>
+    <form action="" enctype="application/x-www-form-urlencoded"></form>
+  </body>
+  <script>
+    document.querySelector('button').addEventListener('click', function () {
+      // 自己去实例化一个头部
+      let myHeader = new Headers();
+      myHeader.append('content-type', 'application/x-www-form-urlencoded');
+      myHeader.append('mytest', 'i m handsome');
+      fetch('/fetchtest', {
+        method: 'post',
+        body: 'name=张三&age=10', // 发送的内容写在body里了
+        headers: myHeader,
+        // content-type 描述的东西要和 body 对应上！
+      })
+        .then((res1) => {
+          console.log('res1:>>', res1);
+          // return res1.text()
+          return res1.json();
+        })
+        .then((res2) => {
+          console.log('res2:>>', res2);
+        });
+    });
+  </script>
+</html>

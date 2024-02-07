@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./jsonp.js"></script>
+  </head>
+  <body>
+    <label for="searchInput">请输入搜索内容</label>
+    <input type="text" id="searchInput" />
+    <h2>内容如下：</h2>
+    <div id="content"></div>
+  </body>
+  <script>
+    document
+      .querySelector('#searchInput')
+      .addEventListener('blur', function () {
+        console.log(this.value);
+        ajax({
+          url: 'https://www.baidu.com/sugrec',
+          dataType: 'jsonp',
+          data: {
+            // pre: 1,
+            // p: 3,
+            // ie: "utf-8",
+            // json: 1,
+            prod: 'pc', // 经过我的测试，这个参数是必须传递的，否则百度不会返回数据
+            // from: "pc_web",
+            // sugsid: "34099,34223,31660,33848,34133,34106,22158",
+            wd: this.value,
+          },
+          success(res) {
+            console.log(res);
+          },
+        });
+      });
+  </script>
+</html>

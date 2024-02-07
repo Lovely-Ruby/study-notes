@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "target": "ES5",
+    "watch": true,
+    "strictNullChecks": true, // null 值严格检查，工作中可以添加
+    "noImplicitAny": true //不允许隐式any 的出现,
+    // "lib": ["ES6"] // 我用的还是不好使
+  },
+
+  "include": ["./src/**/*"]
+  // 两个星号代表当前目录以及其下子目录
+  // 相当于递归
+  // 一个星号代表所有文件
+  // .ts 代表寻找什么文件
+}

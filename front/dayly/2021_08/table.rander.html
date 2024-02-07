@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./../../utils/vue.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="app">
+      <table
+        class="el-table el-table--border table-hori"
+        cellpadding="0"
+        cellspacing="0"
+      >
+        <tr
+          v-for="(itemY, index) in anayseData.yAxis"
+          :key="index"
+          v-show="checkedNode.indexOf(anayseData.colsUuid[index]) !== -1"
+        >
+          <th
+            v-show="String(itemY).split('.')[1].indexOf(checkedNode_label)!==-1"
+          >
+            {{ itemY }}
+          </th>
+          <td
+            v-for="(itemX, index1) in anayseData.xAxis"
+            :key="index1"
+            :class="{'bgcolor-2': anayseData.correlation[index][index1] <= 0.2, 'bgcolor-4': anayseData.correlation[index][index1] <= 0.4, 'bgcolor-6': anayseData.correlation[index][index1] <= 0.6, 'bgcolor-8': anayseData.correlation[index][index1] <= 0.8, 'bgcolor-10': anayseData.correlation[index][index1] <= 1}"
+            v-show="checkedNode.indexOf(anayseData.colsUuid[index1]) !== -1"
+          >
+            {{ Math.floor(anayseData.correlation[index][index1]).toFixed(2) }}
+          </td>
+        </tr>
+
+        <tr>
+          <th></th>
+          <th
+            v-for="(itemX, index) in anayseData.xAxis"
+            :key="index"
+            v-show="String(itemX).split('.')[1].indexOf(checkedNode_label) !== -1"
+          >
+            {{ itemX }}
+          </th>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
+
+<script>
+  var app = new Vue({
+    el: '#app',
+    data() {
+      return {
+        message: '这是一个信息',
+        anayseData: {
+          xAxis: ['col1', 'col2', 'col3', 'col4', 'col5', 'col6'],
+          yAxis: ['col1', 'col2', 'col3', 'col4', 'col5', 'col6'],
+          correlation: [
+            [1, 2, 3, 4, 5, 6],
+            [1, 2, 3, 4, 5, 6],
+            [1, 2, 3, 4, 5, 6],
+            [1, 2, 3, 4, 5, 6],
+            [1, 2, 3, 4, 5, 6],
+            [1, 2, 3, 4, 5, 6],
+          ],
+        },
+        checkedNode: [],
+        checkedNode_label: [],
+      };
+    },
+    mounted() {
+      console.log(1);
+    },
+  });
+</script>
