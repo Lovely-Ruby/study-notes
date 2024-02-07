@@ -1,0 +1,3 @@
+command for WSL
+rm -rf next-app/ && time pnpm  create-next-app next-app --ts --tailwind --eslint --src-dir --app --import-alitas '@/*'
+rm -rf next-app/ && time bun x  create-next-app next-app --ts --tailwind --eslint --src-dir --app --import-alitas '@/*'

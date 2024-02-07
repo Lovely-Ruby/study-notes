@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="1000"></canvas>
+  </body>
+  <script>
+    const canvas = document.querySelector('#canvas');
+    let x = 0;
+    const context = canvas.getContext('2d');
+    // HTMLCanvasElement.getContext() 方法获取这个元素的 context——图像稍后将在此被渲染。
+    // 由 CanvasRenderingContext2D 接口完成实际的绘制
+    context.fillStyle = 'skyblue';
+
+    function animation() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.fillRect(x, 0, 150, 100);
+      x++;
+      // 告诉浏览器——你希望执行一个动画，并且要求浏览器在下次重绘之前调用指定的回调函数更新动画。该方法需要传入一个回调函数作为参数，该回调函数会在浏览器下一次重绘之前执行。
+      // https://developer.mozilla.org/zh-CN/docs/Web/API/window/requestAnimationFrame
+      requestAnimationFrame(animation);
+    }
+    animation();
+  </script>
+</html>

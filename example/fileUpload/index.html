@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="file" name="file" id="file" />
+    <div>进度： <progress value="0" max="100" id="progress"></progress></div>
+    <div>速度： <span id="speed"></span> <span id="unit"></span></div>
+    <button id="btn">上传</button>
+    <button id="cancelBtn">取消上传</button>
+  </body>
+  <script>
+    const btn = document.getElementById('btn');
+    let xhr = new XMLHttpRequest();
+    let oldDataSize;
+    let oldTime;
+    btn.onclick = function () {
+      let file = document.querySelector('#file').files[0];
+      console.log(file);
+      // 组装好 formData
+      // 文件传输是通过正文传输的，所以要用 post
+      let formData = new FormData(); // 这里的 new formData() 会自动帮我设置 content-type
+      formData.append('data', file);
+      formData.append('name', '文件');
+      formData.append('年龄', 20);
+
+      // 组装好 xhr
+      xhr.open('post', '/upload');
+      xhr.onload = function () {
+        console.log(xhr.responseText);
+      };
+      xhr.upload.onloadstart = (event) => {
+        console.log('开始上传');
+        oldLoaded = 0;
+        oldTime = new Date().getTime();
+      };
+      // onprogress 钩子函数会不停地被调用
+      xhr.upload.onprogress = (event) => {
+        // 计算单位时间文件加载大小
+        let duringLoaded = event.loaded - oldLoaded;
+        // 计算单位时间差
+        let duringTime = (new Date().getTime() - oldTime) / 1000; // 时间戳，默认单位是毫秒
+
+        // 更新数据，下次循环的时候需要用
+        oldTime = new Date().getTime();
+        oldLoaded = event.loaded;
+
+        let speed = duringLoaded / duringTime; // 单位是 bt/s
+        let unit = 'b/s';
+        if (speed / 1024 > 1) {
+          speed = speed / 1024;
+          unit = 'kb/s';
+        }
+        if (speed / 1024 > 1) {
+          speed = speed / 1024;
+          unit = 'mb/s';
+        }
+        if (speed / 1024 > 1) {
+          speed = speed / 1024;
+          unit = 'gb/s';
+        }
+        if (speed / 1024 > 1) {
+          speed = speed / 1024;
+          unit = 'tb/s';
+        }
+        // console.log(unit)
+        speed = speed.toFixed(2);
+        document.getElementById('speed').innerHTML = `${speed}`;
+        document.getElementById('unit').innerHTML = `${unit}`;
+        // 计算进度
+        const { total, loaded } = event;
+        let progress = ((loaded / total) * 100).toFixed(0);
+        document.getElementById('progress').value = progress;
+      };
+      xhr.upload.onload = () => {
+        console.log('上传成功');
+      };
+      xhr.upload.onloadend = () => {
+        console.log('上传完成');
+      };
+      xhr.upload.onabort = () => {
+        console.log('取消上传');
+      };
+
+      xhr.send(formData);
+    };
+
+    document.getElementById('cancelBtn').addEventListener('click', function () {
+      // 取消上传
+      xhr.abort();
+    });
+  </script>
+</html>
