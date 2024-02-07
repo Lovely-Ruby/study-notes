@@ -1,0 +1,1 @@
+- https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Type  content-type 的用途 ， 用于标注网页返回的资源类型 MIME

@@ -1,14 +1,24 @@
-# DailyPractice
+# 2024
 
-视频教程的手敲代码
+# 问题记录
 
-## eslint + prettier 2021-08-02
+## git 上传出了问题
 
-- 添加了项目的 `eslintrc` 和 `prettierrc`
-- 在 `package.json` 中添加相应的脚本
+- 设置代理的端口： https://zhuanlan.zhihu.com/p/636418854
 
-## 原因
+## 年前：
 
-- 两台电脑相互切换，换电脑实在是烦
-- 做个记录，博客上也会引用
-- 路径中不要有中文，会有意想不到的错误
+- 把 tauri 的博客写完
+- 看看 redux，把 react 在过一遍
+- 买个服务器，学习如何把项目变成 docker 直接部署
+- 学习 Next.js
+- 学习控制台的高级应用：
+  - https://medium.com/@tomsu
+  - https://juejin.cn/post/6844903732874854414
+- 前端打开系统应用程序
+  - https://juejin.cn/post/6844903989155217421
+- 哈佛大学 cs50 https://cs50.harvard.edu/x/2024/
+
+## 华为云注销买新的
+
+1. 先是域名转出，需要先把备案信息在平台上注销掉，很快的，发完短信大概五分钟就搞定了，提交注销后会发短信

@@ -1,15 +1,635 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    11111
-  </body>
-  <script>
-    console.log(1);
-  </script>
-</html>
+<link href="https://cdn6.xkw.com/zujuan/zjms/zjxt/static/groupExam/groupExam.css?v=1705901861178" rel="stylesheet" type="text/css">
+<article class="paper-cnt clearfix">
+  <div class="seal-line" title="点击-试卷模板-设置-装订线">
+    <img
+      hidden="hidden"
+      id="pui_seal"
+      alt="装订线"
+      title="装订线"
+      src="https://static.zxxk.com/zujuan/zjms/zjxt/static/assets/peal_line.png"
+    />
+  </div>
+  <div class="paper-main">
+    <div class="paper-head">
+      <div
+        hidden="hidden"
+        id="pui_marktag"
+        class="secrecy-mark"
+        title='点击设置"保密标记"'
+        contenteditable="true"
+      >
+        保密★启用前
+      </div>
+      <div class="paper-title">
+        <div
+          id="pui_maintitle"
+          class="main-title"
+          title='点击设置"试卷主标题"'
+          contenteditable="true"
+          style=""
+        >
+          2024年1月24日初中数学作业
+        </div>
+        <div
+          id="pui_subtitle"
+          class="sub-title"
+          title='点击设置"试卷副标题"'
+          contenteditable="true"
+          hidden="hidden"
+        >
+          试卷副标题
+        </div>
+      </div>
+      <div
+        id="pui_testinfo"
+        class="paper-info"
+        title='点击设置"试卷信息栏"'
+        contenteditable="true"
+        hidden="hidden"
+      >
+        考试范围：xxx；考试时间：100分钟；命题人：xxx
+      </div>
+      <div
+        id="pui_studentinput"
+        class="std-input"
+        title='点击设置"考生信息填写栏"'
+        contenteditable="true"
+        style=""
+      >
+        学校:___________姓名：___________班级：___________考号：___________
+      </div>
+      <div hidden="hidden" id="pui_score" class="score-table" title='点击设置"试卷誊分栏"' style="">
+        <table align="center" border="1" cellpadding="0" cellspacing="0" id="pui_scoretable">
+          <tbody>
+            <tr>
+              <td>题号</td>
+              <td>一</td>
+              <td>二</td>
+              <td>总分</td>
+            </tr>
+            <tr>
+              <td>得分</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div hidden="hidden" id="pui_notice" class="notice-box" title='点击设置"考生注意事项栏"'>
+        <div class="notice-tip">注意事项：</div>
+        <div class="notice-text" contenteditable="true" id="pui_noticetext">
+          1．答题前填写好自己的姓名、班级、考号等信息<br />2．请将答案正确填写在答题卡上
+        </div>
+      </div>
+    </div>
+    <div class="paper-body" data-sys-id="60af73cf48236-63be79a0769d2c">
+      <div class="paper-part" data-part-index="0" data-sys-id="676ea89920cff-6e887e4de7b6c4">
+        <div class="part-head" hidden="hidden">
+          <div class="part-head-box" id="part-head-box1">
+            <div class="part-name" contenteditable="true">第I卷（选择题）</div>
+            <div class="part-note" contenteditable="true">请点击修改第I卷的文字说明</div>
+          </div>
+        </div>
+        <div class="part-body">
+          <div
+            class="ques-type"
+            id="questype1_1"
+            name="单选题"
+            data-qt-index="0"
+            data-sys-id="9381eea14c8988-ddae7d63a0a49"
+          >
+            <div class="questype-head">
+              <div class="questypeheadbox">
+                <table border="0" width="100%" cellpadding="0" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <td width="1">
+                        <div hidden="" class="questypescore" id="questypescore1_1" style="width: 120px">
+                          <table
+                            title="评分栏"
+                            border="1"
+                            cellpadding="0"
+                            cellspacing="0"
+                            bordercolor="#666666"
+                          >
+                            <tbody>
+                              <tr>
+                                <td width="55" height="20" align="center">&nbsp;评卷人&nbsp;</td>
+                                <td width="55" align="center">&nbsp;得&nbsp;&nbsp;分&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td height="30" align="center">&nbsp;</td>
+                                <td>&nbsp;</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="questypetitle" id="questypetitle1_1">
+                          <span class="questypeindex"><b>一、</b></span
+                          ><span class="questypename" id="questypename1_1" contenteditable="true">单选题</span
+                          ><span class="questypenote" id="questypenote1_1"></span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="questype-ctrl">
+                <div class="btn-box clearfix">
+                  <a
+                    href="javascript:void 0"
+                    title="上移"
+                    class="ctrl-btn icon icon-moveup move-up-btn"
+                    data-type="upQuesType"
+                    data-qt-sys-id="9381eea14c8988-ddae7d63a0a49"
+                  ></a
+                  ><a
+                    href="javascript:void 0"
+                    title="下移"
+                    class="ctrl-btn icon icon-movedown move-down-btn"
+                    data-type="downQuesType"
+                    data-qt-sys-id="9381eea14c8988-ddae7d63a0a49"
+                  ></a
+                  ><a
+                    href="javascript:void 0"
+                    title="删除"
+                    class="ctrl-btn icon icon-delete del-btn"
+                    data-type="delQuesType"
+                    data-qt-sys-id="9381eea14c8988-ddae7d63a0a49"
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="questype-body">
+              <div class="ques-item" questionid="21334231" data-sys-id="a21041366fad38-f1aab42a7eb5c">
+                <div class="ques-ctrl clearfix">
+                  <a
+                    href="javascript:void 0"
+                    title="换题"
+                    class="ctrl-btn switch-ques"
+                    data-type="switchQues"
+                    data-q-sys-id="a21041366fad38-f1aab42a7eb5c"
+                    >换题</a
+                  ><a
+                    href="javascript:void 0"
+                    title="纠错"
+                    class="ctrl-btn fix-wrong"
+                    data-type="fixWrong"
+                    data-q-sys-id="a21041366fad38-f1aab42a7eb5c"
+                    >纠错</a
+                  ><a
+                    href="javascript:void 0"
+                    title="详情"
+                    class="ctrl-btn look-detail"
+                    data-type="lookDetail"
+                    data-q-sys-id="a21041366fad38-f1aab42a7eb5c"
+                    >详情</a
+                  ><span class="add-res add-blank-line"
+                    ><span class="label-txt">插入作答区</span>
+                    <div class="tk-numberic step-mode" data-sys-id="456f7fe83b39e4-67e8e73e722a18">
+                      <a
+                        data-type="reduceNum"
+                        href="javascript: void 0"
+                        class="numberic-btn icon icon-arrow reduce disabled"
+                        title="减少"
+                      ></a
+                      ><input class="num-txt" maxlength="3" value="" type="text" name="插入作答区" /><a
+                        data-type="addNum"
+                        href="javascript: void 0"
+                        class="numberic-btn icon icon-arrow add"
+                        title="增加"
+                      ></a>
+                    </div>
+                    <span class="msg-prompt"
+                      >不想手动插入？下载试卷时可以选择自动添加主观题作答区啦！快来试试吧~</span
+                    ></span
+                  ><b class="gap">|</b
+                  ><a
+                    href="javascript:void 0"
+                    title="上移"
+                    data-type="quesItemUp"
+                    class="ctrl-icon-btn move-up icon icon-moveup"
+                    data-q-sys-id="a21041366fad38-f1aab42a7eb5c"
+                  ></a
+                  ><a
+                    href="javascript:void 0"
+                    title="下移"
+                    data-type="quesItemDown"
+                    class="ctrl-icon-btn move-down icon icon-movedown"
+                    data-q-sys-id="a21041366fad38-f1aab42a7eb5c"
+                  ></a
+                  ><a
+                    href="javascript:void 0"
+                    title="删除"
+                    data-type="delQuesItem"
+                    class="ctrl-icon-btn del-ques icon icon-delete"
+                    data-q-sys-id="a21041366fad38-f1aab42a7eb5c"
+                  ></a>
+                </div>
+                <div
+                  id="quesdiv21334231"
+                  k="bc1ff2616593d4cec48fb313c08133ac2407"
+                  bankid="2"
+                  questionid="21334231"
+                  class="tk-quest-item quesroot"
+                  data-sys-id="22d7ee20b5d5ac-91771d0ec6351"
+                >
+                  <div class="wrapper quesdiv" id="quesdiv21334231">
+                    <!--试题内容-->
+                    <div class="exam-item__cnt">
+                      <span class="quesindex">1．</span><span class="tips"></span><span></span>如图，在矩形<i
+                        style="font-family: Times New Roman"
+                        >ABCD</i
+                      >中，点<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/895dc3dc3a6606ff487a4c4863e18509.png"
+                        style="vertical-align: middle"
+                      />是边<i style="font-family: Times New Roman">BC</i>的三等分点<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/87cd2e7dd4e4c56dbfd97d243973dcf3.png"
+                        style="vertical-align: middle"
+                      />，点<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/73465a1f9aa03481295bf6bd3c6903ac.png"
+                        style="vertical-align: middle"
+                      />是边<i style="font-family: Times New Roman">CD</i>的中点，线段<i
+                        style="font-family: Times New Roman"
+                        >AG</i
+                      >，<i style="font-family: Times New Roman">AH</i>与对角线<i
+                        style="font-family: Times New Roman"
+                        >BD</i
+                      >分别交于点<i style="font-family: Times New Roman">E</i>，<i
+                        style="font-family: Times New Roman"
+                        >F</i
+                      >．设矩形<i style="font-family: Times New Roman">ABCD</i>的面积为<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/cf231f8f86fb922df4ca0c87f044cec3.png"
+                        style="vertical-align: middle"
+                      />，则以下4个结论中：①<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/4630437a2d9bc297c49ded04f44bc931.png"
+                        style="vertical-align: middle"
+                      />；②<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/6661d166f8f22052134edff003f107c8.png"
+                        style="vertical-align: middle"
+                      />；③<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/bf6d800fbdee48b0c871496a59b3a38b.png"
+                        style="vertical-align: middle"
+                      />；④<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/fb82d4ea674667b06124a3a13c41ef76.png"
+                        style="vertical-align: middle"
+                      />．正确的结论有（<span style="font-family: 'Times New Roman'" qml-space-size="5"
+                        >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+                      >）<br /><img
+                        src="https://img.xkw.com/dksih/QBM/editorImg/2024/1/24/9fac7e7b-e8f4-4711-a205-f0406de4d0a3.png?resizew=168"
+                        style="vertical-align: middle"
+                        alt=""
+                        width="168px"
+                        height="112px"
+                      />
+                      <table name="optionsTable" style="width: 100%; table-layout: fixed" cols="4">
+                        <tbody>
+                          <tr>
+                            <td>A．1个</td>
+                            <td>B．2个</td>
+                            <td>C．3个</td>
+                            <td>D．4个</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!--答案和解析-->
+                    <div hidden="" class="exam-item__opt">
+                      <!--知识点-->
+                      <div class="item knowlegde">
+                        <p class="knowledge-box">
+                          <span data-theme="" class="knowledge-title primary-color">【知识点】</span>
+                          <span data-type="knowledgeItem" class="knowledge-item">
+                            <a
+                              data-type="knowledgeItem"
+                              href="/czsx/zsd5588/"
+                              target="_blank"
+                              class="knowledge-name font-item"
+                              cid="5588"
+                              cname="利用矩形的性质证明"
+                              >利用矩形的性质证明</a
+                            ><a
+                              data-type="knowledgeItem"
+                              href="javascript:void 0"
+                              class="knowledge-explain primary-button btn_KnowledgeUnscramble"
+                              cid="5588"
+                              cname="利用矩形的性质证明"
+                              bankid="2"
+                              >解读</a
+                            ></span
+                          >
+                          <span data-type="knowledgeItem" class="knowledge-item">
+                            <a
+                              data-type="knowledgeItem"
+                              href="/czsx/zsd5841/"
+                              target="_blank"
+                              class="knowledge-name font-item"
+                              cid="5841"
+                              cname="相似三角形的判定与性质综合"
+                              >相似三角形的判定与性质综合</a
+                            ></span
+                          >
+                        </p>
+                      </div>
+                      <!--答案-->
+                      <div class="item answer"></div>
+                      <!--解析-->
+                      <div class="item parse"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="paper-part" data-part-index="1" data-sys-id="b0f7b315b67608-57ded4e11d06b8">
+        <div class="part-head" hidden="hidden">
+          <div class="part-head-box" id="part-head-box2">
+            <div class="part-name" contenteditable="true">第II卷（非选择题）</div>
+            <div class="part-note" contenteditable="true">请点击修改第II卷的文字说明</div>
+          </div>
+        </div>
+        <div class="part-body">
+          <div
+            class="ques-type"
+            id="questype2_1"
+            name="解答题"
+            data-qt-index="1"
+            data-sys-id="f0438ab5466f38-5ae2193fb06344"
+          >
+            <div class="questype-head">
+              <div class="questypeheadbox">
+                <table border="0" width="100%" cellpadding="0" cellspacing="0">
+                  <tbody>
+                    <tr>
+                      <td width="1">
+                        <div hidden="" class="questypescore" id="questypescore2_1" style="width: 120px">
+                          <table
+                            title="评分栏"
+                            border="1"
+                            cellpadding="0"
+                            cellspacing="0"
+                            bordercolor="#666666"
+                          >
+                            <tbody>
+                              <tr>
+                                <td width="55" height="20" align="center">&nbsp;评卷人&nbsp;</td>
+                                <td width="55" align="center">&nbsp;得&nbsp;&nbsp;分&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td height="30" align="center">&nbsp;</td>
+                                <td>&nbsp;</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="questypetitle" id="questypetitle2_1">
+                          <span class="questypeindex"><b>二、</b></span
+                          ><span class="questypename" id="questypename2_1" contenteditable="true">解答题</span
+                          ><span class="questypenote" id="questypenote2_1"></span>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="questype-ctrl">
+                <div class="btn-box clearfix">
+                  <a
+                    href="javascript:void 0"
+                    title="上移"
+                    class="ctrl-btn icon icon-moveup move-up-btn"
+                    data-type="upQuesType"
+                    data-qt-sys-id="f0438ab5466f38-5ae2193fb06344"
+                  ></a
+                  ><a
+                    href="javascript:void 0"
+                    title="下移"
+                    class="ctrl-btn icon icon-movedown move-down-btn"
+                    data-type="downQuesType"
+                    data-qt-sys-id="f0438ab5466f38-5ae2193fb06344"
+                  ></a
+                  ><a
+                    href="javascript:void 0"
+                    title="删除"
+                    class="ctrl-btn icon icon-delete del-btn"
+                    data-type="delQuesType"
+                    data-qt-sys-id="f0438ab5466f38-5ae2193fb06344"
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="questype-body">
+              <div class="ques-item" questionid="21517607" data-sys-id="25c258f904e3a2-c8a812a668c57">
+                <div class="ques-ctrl clearfix">
+                  <a
+                    href="javascript:void 0"
+                    title="换题"
+                    class="ctrl-btn switch-ques"
+                    data-type="switchQues"
+                    data-q-sys-id="25c258f904e3a2-c8a812a668c57"
+                    >换题</a
+                  ><a
+                    href="javascript:void 0"
+                    title="纠错"
+                    class="ctrl-btn fix-wrong"
+                    data-type="fixWrong"
+                    data-q-sys-id="25c258f904e3a2-c8a812a668c57"
+                    >纠错</a
+                  ><a
+                    href="javascript:void 0"
+                    title="详情"
+                    class="ctrl-btn look-detail"
+                    data-type="lookDetail"
+                    data-q-sys-id="25c258f904e3a2-c8a812a668c57"
+                    >详情</a
+                  ><span class="add-res add-blank-line"
+                    ><span class="label-txt">插入作答区</span>
+                    <div class="tk-numberic step-mode" data-sys-id="765f30c00aea48-10bb57eeddb">
+                      <a
+                        data-type="reduceNum"
+                        href="javascript: void 0"
+                        class="numberic-btn icon icon-arrow reduce disabled"
+                        title="减少"
+                      ></a
+                      ><input class="num-txt" maxlength="3" value="" type="text" name="插入作答区" /><a
+                        data-type="addNum"
+                        href="javascript: void 0"
+                        class="numberic-btn icon icon-arrow add"
+                        title="增加"
+                      ></a>
+                    </div>
+                    <span class="msg-prompt"
+                      >不想手动插入？下载试卷时可以选择自动添加主观题作答区啦！快来试试吧~</span
+                    ></span
+                  ><b class="gap">|</b
+                  ><a
+                    href="javascript:void 0"
+                    title="上移"
+                    data-type="quesItemUp"
+                    class="ctrl-icon-btn move-up icon icon-moveup"
+                    data-q-sys-id="25c258f904e3a2-c8a812a668c57"
+                  ></a
+                  ><a
+                    href="javascript:void 0"
+                    title="下移"
+                    data-type="quesItemDown"
+                    class="ctrl-icon-btn move-down icon icon-movedown"
+                    data-q-sys-id="25c258f904e3a2-c8a812a668c57"
+                  ></a
+                  ><a
+                    href="javascript:void 0"
+                    title="删除"
+                    data-type="delQuesItem"
+                    class="ctrl-icon-btn del-ques icon icon-delete"
+                    data-q-sys-id="25c258f904e3a2-c8a812a668c57"
+                  ></a>
+                </div>
+                <div
+                  id="quesdiv21517607"
+                  k="dd179838ab09aefca537d6c3231a3979d45b"
+                  bankid="2"
+                  questionid="21517607"
+                  class="tk-quest-item quesroot"
+                  data-sys-id="c4924429d399-b4411f0f07b8d"
+                >
+                  <div class="wrapper quesdiv" id="quesdiv21517607">
+                    <!--试题内容-->
+                    <div class="exam-item__cnt">
+                      <span class="quesindex">2．</span><span class="tips"></span><span></span>如图，直线<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/decd02bb1fd6ac5a3610a279fe96212b.png"
+                        style="vertical-align: middle"
+                      />，连接线段<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/f52a58fbaf4fea03567e88a9f0f6e37e.png"
+                        style="vertical-align: middle"
+                      />，直线<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/60ef95894ceebaf236170e8832dcf7e3.png"
+                        style="vertical-align: middle"
+                      />、<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/d40b319212a7e7528b053e1c7097e966.png"
+                        style="vertical-align: middle"
+                      />及线段<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/f52a58fbaf4fea03567e88a9f0f6e37e.png"
+                        style="vertical-align: middle"
+                      />把平面分成①、②、③、④四个部分，规定∶线上各点不属于任何部分．当动点<i
+                        style="font-family: Times New Roman"
+                        >P</i
+                      >落在某个部分时，连接<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/bd33764ff4efddfe11a98a609753715c.png"
+                        style="vertical-align: middle"
+                      />、<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/d2be49c37e30a3ced0364c3e74d8c687.png"
+                        style="vertical-align: middle"
+                      />，构成<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/c32986401a4d24904d5e446fa9210ac6.png"
+                        style="vertical-align: middle"
+                      />、<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/cb686e4f5e3938575bc547e849d5513f.png"
+                        style="vertical-align: middle"
+                      />、<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/3e98f2e85bdf9c6669c14f8966ed53be.png"
+                        style="vertical-align: middle"
+                      />三个角．<br /><img
+                        src="https://img.xkw.com/dksih/QBM/editorImg/2024/1/24/aa193b01-2f8b-41d0-b078-3b85afada0de.png?resizew=438"
+                        style="vertical-align: middle"
+                        alt=""
+                        width="438px"
+                        height="141px"
+                      /><br />(1)当动点<i style="font-family: Times New Roman">P</i
+                      >落在第①部分时，如图1，求证：<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/a4c2b49db6c406fb02ec6c6e84d08ab1.png"
+                        style="vertical-align: middle"
+                      />；<br />(2)当动点<i style="font-family: Times New Roman">P</i>落在第②部分时，<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/a4c2b49db6c406fb02ec6c6e84d08ab1.png"
+                        style="vertical-align: middle"
+                      />是否成立？在图2中画出图形，若成立，写出推理过程，若不成立，直接写出这三个角之间的关系．<br />(3)当动点<i
+                        style="font-family: Times New Roman"
+                        >P</i
+                      >落在第③部分时，延长<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/7dea2ae9d515f9ab351ad72306b776ee.png"
+                        style="vertical-align: middle"
+                      />，点<i style="font-family: Times New Roman">P</i>在射线<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/7dea2ae9d515f9ab351ad72306b776ee.png"
+                        style="vertical-align: middle"
+                      />的左侧和右侧时，分别探究<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/c32986401a4d24904d5e446fa9210ac6.png"
+                        style="vertical-align: middle"
+                      />、<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/cb686e4f5e3938575bc547e849d5513f.png"
+                        style="vertical-align: middle"
+                      />、<img
+                        src="https://staticzujuan.xkw.com/quesimg/Upload/formula/3e98f2e85bdf9c6669c14f8966ed53be.png"
+                        style="vertical-align: middle"
+                      />之间的关系，在图3中画出图形，并直接写出相应的结论．
+                    </div>
+                    <!--答案和解析-->
+                    <div hidden="" class="exam-item__opt">
+                      <!--知识点-->
+                      <div class="item knowlegde">
+                        <p class="knowledge-box">
+                          <span data-theme="" class="knowledge-title primary-color">【知识点】</span>
+                          <span data-type="knowledgeItem" class="knowledge-item">
+                            <a
+                              data-type="knowledgeItem"
+                              href="/czsx/zsd5371/"
+                              target="_blank"
+                              class="knowledge-name font-item"
+                              cid="5371"
+                              cname="平行公理推论的应用"
+                              >平行公理推论的应用</a
+                            ><a
+                              data-type="knowledgeItem"
+                              href="javascript:void 0"
+                              class="knowledge-explain primary-button btn_KnowledgeUnscramble"
+                              cid="5371"
+                              cname="平行公理推论的应用"
+                              bankid="2"
+                              >解读</a
+                            ></span
+                          >
+                          <span data-type="knowledgeItem" class="knowledge-item">
+                            <a
+                              data-type="knowledgeItem"
+                              href="/czsx/zsd5383/"
+                              target="_blank"
+                              class="knowledge-name font-item"
+                              cid="5383"
+                              cname="根据平行线的性质探究角的关系"
+                              >根据平行线的性质探究角的关系</a
+                            ><a
+                              data-type="knowledgeItem"
+                              href="javascript:void 0"
+                              class="knowledge-explain primary-button btn_KnowledgeUnscramble"
+                              cid="5383"
+                              cname="根据平行线的性质探究角的关系"
+                              bankid="2"
+                              >解读</a
+                            ></span
+                          >
+                        </p>
+                      </div>
+                      <!--答案-->
+                      <div class="item answer"></div>
+                      <!--解析-->
+                      <div class="item parse"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="deleted-box" data-sys-id="521717f371de0c-a0032deca785d">
+      <h3 class="title-txt"><i class="icon icon-delete"></i><span>已删试题</span></h3>
+      <div class="del-ques-list"></div>
+    </div>
+  </div>
+</article>
