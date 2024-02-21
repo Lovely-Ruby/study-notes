@@ -8,9 +8,9 @@
 
 ## 年前：
 
-- 把 tauri 的博客写完
+- ~~把 tauri 的博客写完~~
 - 看看 redux，把 react 在过一遍
-- 买个服务器，学习如何把项目变成 docker 直接部署
+- ~~买个服务器，学习如何把项目变成 docker 直接部署~~
 - 学习 Next.js
 - 学习控制台的高级应用：
   - https://medium.com/@tomsu
