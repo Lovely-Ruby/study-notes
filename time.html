@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time</title>
+  <style>
+    /* 定义动画 */
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    body {
+      padding: 0;
+      margin: 0;
+      background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+      background-size: 400% 400%;
+      animation: gradientAnimation 120s ease infinite;
+    }
+
+
+    #content {
+      color: #ffffffeb;
+      font-size: 50px;
+    }
+
+    .info {
+      margin-top: 4vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      font-size: 22vh;
+    }
+
+    .time {
+      width: 100vw;
+      margin-top: 2vh;
+      display: flex;
+      justify-content: center;
+      font-size: 48vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="content">
+    <div class="info">2024-08-21 周三</div>
+    <div class="time">22:08:32</div>
+  </div>
+</body>
+<script>
+  function getNowDateTime() {
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = ('0' + (date.getMonth() + 1)).slice(-2); // 月份是从0开始的，所以要加1
+    var day = ('0' + date.getDate()).slice(-2);
+    var hour = ('0' + date.getHours()).slice(-2);
+    var minutes = ('0' + date.getMinutes()).slice(-2);
+    var seconds = ('0' + date.getSeconds()).slice(-2);
+    return { year, month, day, hour, minutes, seconds }
+  }
+
+  function getWeekDay() {
+    var date = new Date();
+    const weekDays = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+    return weekDays[date.getDay()];
+  }
+
+  const interval = setInterval(() => {
+    const { year, month, day, hour, minutes, seconds } = getNowDateTime()
+    const info = document.querySelector('.info');
+    info.innerHTML = `${year}-${month}-${day} ${getWeekDay()}`;
+    const time = document.querySelector('.time');
+    time.innerHTML = `${hour}:${minutes}:${seconds}`;
+  }, 1000)
+</script>
+
+</html>

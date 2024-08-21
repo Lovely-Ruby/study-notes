@@ -1,0 +1,14 @@
+阿里大文娱
+
+- 有两个系统，一个 375px，一个 750， 如何转换？ 
+https://www.zhihu.com/question/302746839
+-  浏览器解析 html 和 css 的过程？
+https://zhuanlan.zhihu.com/p/445810614
+- 解析的过程中重排和重绘发生在什么时候？有什么场景可以触发重拍绘吗？
+- 简单的移动小球的动画，有什么思路，css 除了 keyFrame 还有其他思路吗？
+- 浏览器的事件循环机制？
+- js 代码，上面是 setTimeout(，3s)， 下面是同步代码5s，执行当前js是什么结果
+- 项目中性能提升
+- vue 中 v-for 和 v-if 的优先级
+- git rebase 用过吗？原理是什么？
+- px、rpx、em、rem、vh、vw 的区别
