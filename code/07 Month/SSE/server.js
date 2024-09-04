@@ -12,15 +12,15 @@ app.get('/events', function (req, res) {
   let startTime = Date.now()
 
   const sendEvent = () => {
-    // 检查是否已经发送了10秒
+    // 检查是否已经发送了10秒
     if (Date.now() - startTime >= 10000) {
-      res.write('event: close\ndata: {}\n\n') // 发送一个特殊事件通知客户端关闭
-      res.end() // 关闭连接
+      res.write('event: close\ndata: {}\n\n') // 发送一个特殊事件通知客户端关闭
+      res.end() // 关闭连接
       return
     }
 
-    const data = { message: 'Hello World', timestamp: new Date() }
-    res.write(`data: ${JSON.stringify(data)}\n\n`) // 每隔2秒发送一次消息
+    const data = { message: 'Hello World', timestamp: new Date() }
+    res.write(`data: ${JSON.stringify(data)}\n\n`) // 每隔2秒发送一次消息
 
     setTimeout(sendEvent, 2000)
   }
@@ -29,5 +29,5 @@ app.get('/events', function (req, res) {
 })
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`)
+  console.log(`Server running on http://localhost:${PORT}`)
 })
